@@ -3,3 +3,9 @@
 Homestead.yaml
 Homestead.json
 .env
+
+# PHP STORM
+.settings
+.idea/**/*
+.idea
+/.idea

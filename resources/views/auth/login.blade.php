@@ -5,11 +5,11 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Login</div>
+                    <div class="panel-heading">@lang('auth.login_title')</div>
                     <div class="panel-body">
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
-                                Por favor corrige los siguientes errores:<br><br>
+                                @lang('auth.errors_title'):<br><br>
                                 <ul>
                                     @foreach ($errors->all() as $error)
                                         <li>{{ $error }}</li>
@@ -18,20 +18,20 @@
                             </div>
                         @endif
 
-                        <form class="form-horizontal" role="form" method="POST" action="/auth/login">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label">{{ trans('validation.attributes.email') }}</label>
+                                <label class="col-md-4 control-label">@('validation.attributes.email')</label>
                                 <div class="col-md-6">
-                                    <input type="email" value="{{ old('email') }}" class="form-control">
+                                    <input name="email" type="email" value="{{ old('email') }}" class="form-control">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label">{{ trans('validation.attributes.password') }}</label>
+                                <label class="col-md-4 control-label">@('validation.attributes.password')</label>
                                 <div class="col-md-6">
-                                    <input type="password" class="form-control">
+                                    <input name="password" type="password" class="form-control">
                                 </div>
                             </div>
 

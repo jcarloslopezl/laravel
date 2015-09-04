@@ -18,7 +18,7 @@ class UserTableSeeder extends Seeder
             'name' => 'Juan Carlos',
             'email' => 'jlopez@zegucom.com.mx',
             'role' => 'admin',
-            'password' => 'test'
+            'password' => bcrypt('admin')
         ]);
         factory(App\User::class, 49)->create();
 
