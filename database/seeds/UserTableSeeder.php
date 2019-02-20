@@ -16,7 +16,7 @@ class UserTableSeeder extends Seeder
 
         factory(App\User::class)->create([
             'name' => 'Juan Carlos',
-            'email' => 'jlopez@zegucom.com.mx',
+            'email' => 'admin@test.com',
             'role' => 'admin',
             'password' => 'test'
         ]);
